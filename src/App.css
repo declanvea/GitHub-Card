@@ -1,0 +1,13 @@
+.App {
+  display: flex;
+  width: 50%;
+  text-align: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+div.ui.card {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
