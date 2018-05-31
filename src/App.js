@@ -6,9 +6,10 @@ class App extends Component {
   state = {
     user: {},
     active: false,
+    text: "",
   }
   handleClick = () => {
-    fetch( 'https://api.github.com/users/declanvea' )
+    fetch( `https://api.github.com/users/${this.state.text}` )
     .then( r => r.json())
     .then( response => {
       this.setState({ 
@@ -17,10 +18,16 @@ class App extends Component {
       })
     })
   }
+  onChange = (e) => {
+    this.setState({
+      text: e.target.value,
+    });
+  }
   render() {
     const { user, active } = this.state;
     return (
       <div className="App">
+        <input type="text" onChange={this.onChange} value={this.state.text} />
         <Button primary onClick={ this.handleClick }>
           { active ?
             "Hide Profile" :
