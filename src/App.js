@@ -27,7 +27,7 @@ class App extends Component {
     const { user, active } = this.state;
     return (
       <div className="App">
-        <input type="text" onChange={this.onChange} value={this.state.text} />
+        <input placeholder="Type a GitHub Username" type="text" onChange={this.onChange} value={this.state.text} />
         <Button primary onClick={ this.handleClick }>
           { active ?
             "Hide Profile" :
